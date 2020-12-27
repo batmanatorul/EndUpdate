@@ -18,11 +18,17 @@ import net.minecraft.world.gen.feature.OreFeatureConfig;
 
 public class OreGen {
     public static ConfiguredFeature<?, ?> END_IRON_END = Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE),
-            com.batmanatorul.endupdate.register.Blocks.END_IRON.getDefaultState(), 9)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,0,64)))
+            com.batmanatorul.endupdate.register.Blocks.END_IRON.getDefaultState(), 9)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,0,70)))
+            .spreadHorizontally().repeat(10);
+    public static ConfiguredFeature<?, ?> END_GOLD_END = Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE),
+            com.batmanatorul.endupdate.register.Blocks.END_GOLD.getDefaultState(), 9)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,0,50)))
             .spreadHorizontally().repeat(10);
 
 public static void OreGenInit() {
     RegistryKey<ConfiguredFeature<?, ?>> end_iron_end = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(EndUpdate.MOD_ID, "end_iron_gen"));
     Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, end_iron_end.getValue(), END_IRON_END);
     BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES, end_iron_end);
+    RegistryKey<ConfiguredFeature<?, ?>> end_gold_end = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(EndUpdate.MOD_ID, "end_gold_gen"));
+    Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, end_gold_end.getValue(), END_GOLD_END);
+    BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES, end_gold_end);
 }}

@@ -17,8 +17,15 @@ public class Blocks {
             .breakByTool(FabricToolTags.PICKAXES, 1)
             .sounds(BlockSoundGroup.STONE)
             .requiresTool());
+    public static final Block END_GOLD = new Block(FabricBlockSettings
+            .of(Material.STONE)
+            .strength(4, 10)
+            .breakByTool(FabricToolTags.PICKAXES, 2)
+            .sounds(BlockSoundGroup.STONE)
+            .requiresTool());
 
     public static void BlocksInit() {
         Registry.register(Registry.BLOCK, new Identifier(EndUpdate.MOD_ID, "end_iron"), END_IRON);
+        Registry.register(Registry.BLOCK, new Identifier(EndUpdate.MOD_ID, "end_gold"), END_GOLD);
     }
 }
