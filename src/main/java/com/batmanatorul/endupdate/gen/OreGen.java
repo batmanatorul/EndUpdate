@@ -21,8 +21,8 @@ public class OreGen {
             com.batmanatorul.endupdate.register.Blocks.END_IRON.getDefaultState(), 9)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,0,70)))
             .spreadHorizontally().repeat(10);
     public static ConfiguredFeature<?, ?> END_GOLD_END = Feature.ORE.configure(new OreFeatureConfig(new BlockMatchRuleTest(Blocks.END_STONE),
-            com.batmanatorul.endupdate.register.Blocks.END_GOLD.getDefaultState(), 9)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,0,50)))
-            .spreadHorizontally().repeat(10);
+            com.batmanatorul.endupdate.register.Blocks.END_GOLD.getDefaultState(), 8)).decorate(Decorator.RANGE.configure(new RangeDecoratorConfig(0,0,50)))
+            .spreadHorizontally().repeat(7);
 
 public static void OreGenInit() {
     RegistryKey<ConfiguredFeature<?, ?>> end_iron_end = RegistryKey.of(Registry.CONFIGURED_FEATURE_WORLDGEN, new Identifier(EndUpdate.MOD_ID, "end_iron_gen"));
